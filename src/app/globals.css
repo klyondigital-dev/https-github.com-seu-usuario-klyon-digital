@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #0a0a0f; /* Fundo hiper escuro/noite */
+  --color-secondary: #12121a; /* Fundo de cartões */
+  --color-accent-purple: #9d4edd; /* Roxo vibrante */
+  --color-accent-blue: #00f0ff; /* Azul Ciano Neon */
+  --color-text-main: #f8fafc; /* Texto claro */
+  --color-text-light: #94a3b8; /* Texto cinza suave */
+
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-space);
+}
+
+:root {
+  --background: var(--color-primary);
+  --foreground: var(--color-text-main);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, sans-serif;
+  overflow-x: hidden;
+}
