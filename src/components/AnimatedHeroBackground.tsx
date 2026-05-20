@@ -19,9 +19,10 @@ export default function AnimatedHeroBackground() {
   useEffect(() => {
     // Usando setTimeout para evitar chamadas síncronas de setState dentro do effect, o que causa erro no linter do Next 15.
     // Isso também previne problemas de hidratação pois os valores randômicos são gerados puramente no cliente.
+    const isMobile = window.innerWidth < 768;
     const t = setTimeout(() => {
       setParticles(
-        Array.from({ length: 40 }).map((_, i) => ({
+        Array.from({ length: isMobile ? 15 : 40 }).map((_, i) => ({
           id: i,
           size: Math.random() * 4 + 1,
           x: Math.random() * 100,
@@ -42,23 +43,23 @@ export default function AnimatedHeroBackground() {
       {/* Grade de fundo tecnológica */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_20%,transparent_100%)]" />
 
-      {/* Orbes de luz flutuantes */}
+      {/* Orbes de luz flutuantes - Animação simplificada via CSS ou reduzida */}
       <motion.div
-        animate={{
+        animate={typeof window !== 'undefined' && window.innerWidth >= 768 ? {
           x: ["0%", "20%", "0%", "-20%", "0%"],
           y: ["0%", "20%", "-20%", "10%", "0%"],
           scale: [1, 1.2, 0.8, 1.1, 1],
-        }}
+        } : {}}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         className="absolute top-[20%] left-[20%] w-[500px] h-[500px] bg-accent-purple/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none"
       />
       
       <motion.div
-        animate={{
+        animate={typeof window !== 'undefined' && window.innerWidth >= 768 ? {
           x: ["0%", "-30%", "10%", "20%", "0%"],
           y: ["0%", "-10%", "30%", "-20%", "0%"],
           scale: [1, 0.9, 1.3, 0.9, 1],
-        }}
+        } : {}}
         transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
         className="absolute bottom-[10%] right-[10%] w-[600px] h-[600px] bg-accent-blue/15 rounded-full blur-[150px] mix-blend-screen pointer-events-none"
       />

@@ -5,6 +5,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function MouseFollower() {
   const [isHovering, setIsHovering] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   
   // Valores fora do ciclo de renderização do React (muito mais rápido)
   const cursorX = useMotionValue(-100);
@@ -18,6 +19,8 @@ export default function MouseFollower() {
   const ringSpringY = useSpring(cursorY, { stiffness: 150, damping: 15, mass: 0.5 });
 
   useEffect(() => {
+    if (isMobile) return;
+    
     const updateMousePosition = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
@@ -39,7 +42,16 @@ export default function MouseFollower() {
       window.removeEventListener("mousemove", updateMousePosition);
       window.removeEventListener("mouseover", handleMouseOver);
     };
-  }, [cursorX, cursorY]);
+  }, [cursorX, cursorY, isMobile]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsMobile(window.innerWidth < 768 || window.matchMedia("(pointer: coarse)").matches);
+    }, 0);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isMobile) return null;
 
   return (
     <>
