@@ -2,11 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const { scrollYProgress } = useScroll();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -24,10 +23,6 @@ export default function Navbar() {
         scrolled ? "bg-primary/90 backdrop-blur-md py-4 border-b border-accent-purple/20" : "bg-transparent py-6"
       }`}
     >
-      <motion.div
-        className="absolute bottom-0 left-0 h-[1px] bg-gradient-to-r from-accent-purple to-accent-blue origin-left"
-        style={{ scaleX: scrollYProgress, width: "100%" }}
-      />
       
       <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
