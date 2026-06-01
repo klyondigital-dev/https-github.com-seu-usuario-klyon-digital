@@ -160,7 +160,7 @@ export default function PortfolioPage() {
 
         {/* SERVIÇOS */}
         <section id="servicos" className="py-32 px-6 bg-primary relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-purple/10 rounded-full blur-[150px] pointer-events-none" />
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(157,78,221,0.08)_0%,transparent_60%)] pointer-events-none" />
           
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="mb-20 text-center">
@@ -225,7 +225,7 @@ export default function PortfolioPage() {
 
         {/* IMPACT */}
         <section className="py-40 px-6 relative overflow-hidden bg-secondary border-t border-white/5">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-blue/10 rounded-full blur-[150px] animate-pulse pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-[radial-gradient(circle_at_center,rgba(0,240,255,0.08)_0%,transparent_60%)] animate-pulse pointer-events-none" />
 
           <div className="relative z-10 max-w-5xl mx-auto text-center">
             <motion.p 

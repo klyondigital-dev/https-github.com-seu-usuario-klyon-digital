@@ -33,10 +33,9 @@ const portfolioItems = [
 
 export default function PortfolioSection() {
   return (
-    <section id="portfolio" className="py-24 bg-primary relative overflow-hidden border-t border-white/5">
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-accent-purple/5 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-blue/5 rounded-full blur-[150px] pointer-events-none" />
+    <section id="portfolio" className="py-24 bg-primary relative overflow-hidden">
+      <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(157,78,221,0.05)_0%,transparent_60%)] pointer-events-none -translate-x-1/2" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(0,240,255,0.05)_0%,transparent_60%)] pointer-events-none translate-x-1/2" />
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <AnimatedSection className="text-center mb-20">

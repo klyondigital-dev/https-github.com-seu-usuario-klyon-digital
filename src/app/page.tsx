@@ -63,8 +63,8 @@ export default function Home() {
 
         {/* NOSSOS SERVIÇOS */}
         <section id="servicos" className="py-24 bg-primary relative">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-accent-purple/10 rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-blue/10 rounded-full blur-[120px]" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(157,78,221,0.08)_0%,transparent_60%)] pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(0,240,255,0.08)_0%,transparent_60%)] pointer-events-none" />
           
           <div className="container mx-auto px-6 lg:px-12 relative z-10">
             <AnimatedSection className="text-center mb-20">
@@ -190,9 +190,9 @@ export default function Home() {
         </section>
 
         {/* VSL & BENEFÍCIOS INTERATIVOS (Oculto temporariamente a pedido do usuário) */}
-        {/* 
-        <section className="py-24 bg-primary relative overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-purple/5 rounded-full blur-[150px] pointer-events-none" />
+        {/* CTA SECTION */}
+        <section className="py-24 bg-primary relative overflow-hidden border-t border-white/5">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(157,78,221,0.08)_0%,transparent_60%)] pointer-events-none" />
           
           <div className="container mx-auto px-6 lg:px-12">
             <AnimatedSection className="text-center mb-16">

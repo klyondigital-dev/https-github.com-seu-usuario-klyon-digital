@@ -26,9 +26,8 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="py-24 bg-primary relative overflow-hidden">
-      {/* Luz de fundo */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-blue/5 rounded-full blur-[120px] pointer-events-none" />
+    <section className="py-24 bg-secondary relative overflow-hidden border-y border-white/5">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(0,240,255,0.05)_0%,transparent_60%)] pointer-events-none" />
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <AnimatedSection className="text-center mb-16">
