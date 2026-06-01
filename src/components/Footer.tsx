@@ -18,7 +18,10 @@ export default function Footer() {
             <a href="https://www.instagram.com/klyon_digital" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary border border-accent-purple/30 text-accent-purple flex items-center justify-center hover:bg-accent-purple hover:text-white transition-all duration-300 shadow-[0_0_10px_rgba(157,78,221,0.2)]">
               <FaInstagram size={20} />
             </a>
-            <a href="https://wa.me/5518981290630" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary border border-accent-blue/30 text-accent-blue flex items-center justify-center hover:bg-accent-blue hover:text-primary transition-all duration-300 shadow-[0_0_10px_rgba(0,240,255,0.2)]">
+            <a href="https://wa.me/5518981290630" target="_blank" rel="noopener noreferrer" title="Fale no WhatsApp (DDD 18)" className="w-10 h-10 rounded-full bg-primary border border-accent-blue/30 text-accent-blue flex items-center justify-center hover:bg-accent-blue hover:text-primary transition-all duration-300 shadow-[0_0_10px_rgba(0,240,255,0.2)]">
+              <FaWhatsapp size={20} />
+            </a>
+            <a href="https://wa.me/5538997368504" target="_blank" rel="noopener noreferrer" title="Fale no WhatsApp (DDD 38)" className="w-10 h-10 rounded-full bg-primary border border-accent-blue/30 text-accent-blue flex items-center justify-center hover:bg-accent-blue hover:text-primary transition-all duration-300 shadow-[0_0_10px_rgba(0,240,255,0.2)]">
               <FaWhatsapp size={20} />
             </a>
           </div>
@@ -39,6 +42,10 @@ export default function Footer() {
             <li className="flex items-center gap-2">
               <FaWhatsapp className="text-accent-blue" />
               <a href="https://wa.me/5518981290630" className="hover:text-accent-blue transition-colors">+55 18 98129-0630</a>
+            </li>
+            <li className="flex items-center gap-2">
+              <FaWhatsapp className="text-accent-blue" />
+              <a href="https://wa.me/5538997368504" className="hover:text-accent-blue transition-colors">+55 38 99736-8504</a>
             </li>
             <li className="flex items-center gap-2">
               <FaInstagram className="text-accent-purple" />

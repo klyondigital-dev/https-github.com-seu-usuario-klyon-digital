@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import Script from "next/script";
-import MouseFollower from "@/components/MouseFollower";
 import "./globals.css";
 
 const space = Space_Grotesk({
@@ -47,47 +46,53 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${space.variable} ${inter.variable} antialiased cursor-none`}
+      className={`${space.variable} ${inter.variable} antialiased`}
     >
       <body className="bg-primary font-sans text-text-main">
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-5NK3M9NRV1"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-5NK3M9NRV1');
-          `}
-        </Script>
-        {/* Meta Pixel Code */}
-        <Script id="meta-pixel" strategy="afterInteractive">
-          {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1528893535543889');
-            fbq('track', 'PageView');
-          `}
-        </Script>
-        <noscript>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=1528893535543889&ev=PageView&noscript=1"
-            alt=""
-          />
-        </noscript>
+        {/* Google Analytics & Meta Pixel - Loaded only in Production and with lazyOnload to avoid blocking page rendering/HMR in dev */}
+        {process.env.NODE_ENV === "production" && (
+          <>
+            {/* Google Analytics */}
+            <Script
+              src="https://www.googletagmanager.com/gtag/js?id=G-5NK3M9NRV1"
+              strategy="lazyOnload"
+            />
+            <Script id="google-analytics" strategy="lazyOnload">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-5NK3M9NRV1');
+              `}
+            </Script>
+
+            {/* Meta Pixel Code */}
+            <Script id="meta-pixel" strategy="lazyOnload">
+              {`
+                !function(f,b,e,v,n,t,s)
+                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '1528893535543889');
+                fbq('track', 'PageView');
+              `}
+            </Script>
+            <noscript>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                height="1"
+                width="1"
+                style={{ display: "none" }}
+                src="https://www.facebook.com/tr?id=1528893535543889&ev=PageView&noscript=1"
+                alt=""
+              />
+            </noscript>
+          </>
+        )}
         {/* Schema.org / SEO Estruturado */}
         <Script id="schema-local-business" type="application/ld+json" strategy="beforeInteractive">
           {`
@@ -96,7 +101,7 @@ export default function RootLayout({
               "@type": "MarketingAgency",
               "name": "Klyon Digital",
               "url": "https://klyondigital.com.br",
-              "telephone": "+5518981290630",
+              "telephone": ["+5518981290630", "+5538997368504"],
               "description": "Agência de marketing de alta performance especializada em tráfego pago, criação de sites, landing pages e automações de vendas.",
               "address": {
                 "@type": "PostalAddress",
@@ -154,7 +159,6 @@ export default function RootLayout({
             }
           `}
         </Script>
-        <MouseFollower />
         {children}
       </body>
     </html>

@@ -11,7 +11,8 @@ import FaqSection from "@/components/FaqSection";
 import { FaChartLine, FaShareNodes, FaLaptopCode, FaRobot, FaDatabase, FaArrowRight, FaBolt, FaCircleCheck, FaPalette } from "react-icons/fa6";
 
 export default function Home() {
-  const whatsappUrl = "https://wa.me/5518981290630";
+  const whatsappUrl1 = "https://wa.me/5518981290630";
+  const whatsappUrl2 = "https://wa.me/5538997368504";
 
   return (
     <>
@@ -43,7 +44,7 @@ export default function Home() {
               <AnimatedSection delay={0.4}>
                 <div className="flex flex-col sm:flex-row justify-center gap-6 mb-16">
                   <a
-                    href={whatsappUrl}
+                    href={whatsappUrl1}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-transparent border-2 border-transparent rounded-full overflow-hidden"
@@ -128,7 +129,7 @@ export default function Home() {
                 </li>
               </ul>
               
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-accent-blue font-bold flex items-center gap-2 hover:gap-4 transition-all">
+              <a href={whatsappUrl2} target="_blank" rel="noopener noreferrer" className="text-accent-blue font-bold flex items-center gap-2 hover:gap-4 transition-all">
                 Conhecer a agência por dentro <FaArrowRight />
               </a>
             </AnimatedSection>
@@ -248,7 +249,7 @@ export default function Home() {
                 Pare de perder vendas para a concorrência. Clique abaixo e fale diretamente com a nossa equipe de especialistas.
               </p>
               <a
-                href={whatsappUrl}
+                href={whatsappUrl2}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-white text-primary px-12 py-5 rounded-full font-bold text-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-105 transition-all duration-300"

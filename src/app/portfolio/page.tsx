@@ -179,43 +179,46 @@ export default function PortfolioPage() {
             </div>
 
             <div className="grid lg:grid-cols-3 gap-8">
-              {services.map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <MouseGlowCard className="p-8 h-full flex flex-col justify-between group cursor-default">
-                    <div>
-                      <div className="text-accent-purple text-sm tracking-[3px] font-bold uppercase mb-4 opacity-70 group-hover:opacity-100 transition-opacity">
-                        Klyon Digital
+              {services.map((service, index) => {
+                const whatsappUrl = index % 2 === 0 ? "https://wa.me/5518981290630" : "https://wa.me/5538997368504";
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <MouseGlowCard className="p-8 h-full flex flex-col justify-between group cursor-default">
+                      <div>
+                        <div className="text-accent-purple text-sm tracking-[3px] font-bold uppercase mb-4 opacity-70 group-hover:opacity-100 transition-opacity">
+                          Klyon Digital
+                        </div>
+                        <h3 className="text-3xl font-black mb-4 text-white">
+                          {service.title}
+                        </h3>
+                        <p className="text-text-light leading-relaxed mb-8">
+                          {service.desc}
+                        </p>
                       </div>
-                      <h3 className="text-3xl font-black mb-4 text-white">
-                        {service.title}
-                      </h3>
-                      <p className="text-text-light leading-relaxed mb-8">
-                        {service.desc}
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <div className="text-2xl font-bold mb-6 text-white">
-                        {service.price}
+                      
+                      <div>
+                        <div className="text-2xl font-bold mb-6 text-white">
+                          {service.price}
+                        </div>
+                        <a 
+                          href={whatsappUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="block w-full py-4 rounded-xl border border-white/10 bg-white/5 text-center text-white font-bold hover:bg-white hover:text-black transition-all duration-300"
+                        >
+                          QUERO ESSA ESTRUTURA
+                        </a>
                       </div>
-                      <a 
-                        href="https://wa.me/5518981290630" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="block w-full py-4 rounded-xl border border-white/10 bg-white/5 text-center text-white font-bold hover:bg-white hover:text-black transition-all duration-300"
-                      >
-                        QUERO ESSA ESTRUTURA
-                      </a>
-                    </div>
-                  </MouseGlowCard>
-                </motion.div>
-              ))}
+                    </MouseGlowCard>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -253,7 +256,7 @@ export default function PortfolioPage() {
             </motion.p>
 
             <motion.a 
-              href="https://wa.me/5518981290630"
+              href="https://wa.me/5538997368504"
               target="_blank" 
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.9 }}
