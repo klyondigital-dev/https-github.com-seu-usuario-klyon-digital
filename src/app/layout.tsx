@@ -66,9 +66,10 @@ export default function RootLayout({
               `}
             </Script>
 
-            {/* Meta Pixel Code */}
+            {/* Meta Pixel Code (TEMPORARILY COMMENTED OUT FOR PERFORMANCE TESTING) */}
+            {/*
             <Script id="meta-pixel" strategy="lazyOnload">
-              {`
+              {\`
                 !function(f,b,e,v,n,t,s)
                 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
                 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -79,10 +80,9 @@ export default function RootLayout({
                 'https://connect.facebook.net/en_US/fbevents.js');
                 fbq('init', '1528893535543889');
                 fbq('track', 'PageView');
-              `}
+              \`}
             </Script>
             <noscript>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 height="1"
                 width="1"
@@ -91,6 +91,7 @@ export default function RootLayout({
                 alt=""
               />
             </noscript>
+            */}
           </>
         )}
         {/* Schema.org / SEO Estruturado */}
