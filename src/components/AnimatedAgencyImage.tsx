@@ -70,7 +70,7 @@ export default function AnimatedAgencyImage() {
           <p className="text-white font-bold text-xs md:text-sm">+24.5k</p>
           <p className="text-text-light text-[10px] md:text-xs">Engajamento</p>
         </div>
-      </motion.div>
+      </div>
 
       {/* Widget de Vendas/Gráfico */}
       <div
@@ -84,7 +84,7 @@ export default function AnimatedAgencyImage() {
           <p className="text-white font-bold text-xs md:text-sm">+315%</p>
           <p className="text-text-light text-[10px] md:text-xs">Conversão (ROI)</p>
         </div>
-      </motion.div>
+      </div>
 
       {/* Ícone de Mensagem solto */}
       <div
