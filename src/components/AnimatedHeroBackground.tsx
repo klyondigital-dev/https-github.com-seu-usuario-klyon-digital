@@ -50,14 +50,14 @@ export default function AnimatedHeroBackground() {
       {/* Grade de fundo tecnológica */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_20%,transparent_100%)]" />
 
-      {/* Orbes de luz flutuantes (Agora mais leves e usando CSS puro) */}
+      {/* Orbes de luz flutuantes (Sem filtro de Blur, usando Radial Gradient para performance absurda) */}
       <div
-        className="absolute top-[20%] left-[20%] w-[250px] h-[250px] md:w-[500px] md:h-[500px] bg-accent-purple/15 md:bg-accent-purple/20 rounded-full blur-[80px] pointer-events-none"
+        className="absolute top-[20%] left-[20%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-full pointer-events-none bg-[radial-gradient(circle_at_center,rgba(157,78,221,0.2)_0%,transparent_60%)]"
         style={{ animation: "glow-pulse 8s infinite ease-in-out" }}
       />
       
       <div
-        className="absolute bottom-[10%] right-[10%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-accent-blue/10 md:bg-accent-blue/15 rounded-full blur-[80px] pointer-events-none"
+        className="absolute bottom-[10%] right-[10%] w-[400px] h-[400px] md:w-[800px] md:h-[800px] rounded-full pointer-events-none bg-[radial-gradient(circle_at_center,rgba(0,240,255,0.15)_0%,transparent_60%)]"
         style={{ animation: "glow-pulse 10s infinite ease-in-out reverse" }}
       />
 
