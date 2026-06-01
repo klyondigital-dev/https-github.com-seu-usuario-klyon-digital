@@ -88,7 +88,7 @@ export default function Home() {
                   delay={0.1 * index}
                 >
                   <MouseGlowCard className="h-full">
-                    <div className="bg-secondary/50 backdrop-blur-xl border border-white/5 p-10 rounded-3xl transition-all duration-500 h-full flex flex-col group relative overflow-hidden z-10">
+                    <div className="bg-secondary/50 border border-white/5 p-10 rounded-3xl transition-all duration-500 h-full flex flex-col group relative overflow-hidden z-10">
                       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-purple to-accent-blue opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       
                       <div className="w-16 h-16 bg-primary border border-white/10 rounded-2xl flex items-center justify-center text-accent-blue mb-8 group-hover:scale-110 group-hover:text-accent-purple transition-all duration-500 shadow-[0_0_15px_rgba(0,240,255,0.1)]">
@@ -160,7 +160,7 @@ export default function Home() {
                   { num: "03", title: "Injeção de Tráfego", desc: "Ativamos campanhas agressivas com foco no público comprador." },
                   { num: "04", title: "Escala e Otimização", desc: "Lemos os dados e escalamos os investimentos que trazem lucro." },
                 ].map((step, i) => (
-                  <AnimatedSection key={i} delay={0.1 * i} className="bg-secondary/80 backdrop-blur-md p-8 rounded-2xl border border-white/5 text-center relative hover:-translate-y-2 transition-transform">
+                  <AnimatedSection key={i} delay={0.1 * i} className="bg-secondary/80 p-8 rounded-2xl border border-white/5 text-center relative hover:-translate-y-2 transition-transform">
                     <div className="w-12 h-12 bg-primary border border-accent-blue/30 text-accent-blue font-bold rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_15px_rgba(0,240,255,0.2)]">
                       {step.num}
                     </div>
@@ -212,7 +212,7 @@ export default function Home() {
                   { title: "Automação 24/7", desc: "Nossos robôs e processos de CRM nunca dormem. Eles continuam atendendo, nutrindo e vendendo para os seus clientes de madrugada ou nos finais de semana." },
                 ].map((item, index) => (
                   <AnimatedSection key={index} delay={0.2 + (0.1 * index)}>
-                    <div className="group bg-secondary/30 backdrop-blur-sm border border-white/5 p-6 rounded-2xl hover:bg-secondary/80 hover:border-accent-purple/40 transition-all duration-300 cursor-default">
+                    <div className="group bg-secondary/30 border border-white/5 p-6 rounded-2xl hover:bg-secondary/80 hover:border-accent-purple/40 transition-all duration-300 cursor-default">
                       <div className="flex items-start gap-4">
                         <div className="w-12 h-12 bg-primary border border-white/10 rounded-xl flex items-center justify-center text-accent-blue group-hover:bg-accent-purple group-hover:text-white group-hover:border-accent-purple transition-all duration-300 shrink-0">
                           <span className="font-bold font-heading">{index + 1}</span>
